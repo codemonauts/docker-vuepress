@@ -1,9 +1,8 @@
 FROM node:12
 
-RUN mkdir /local
-RUN npm install -g @vue/cli
+RUN  yarn global add vuepress vuepress-plugin-flowchart @vuepress/plugin-medium-zoom
 
-WORKDIR /local
 EXPOSE 8080
+WORKDIR /local
 
-CMD ["/bin/bash", "-c", "yarn install && yarn run docs:dev --host 0.0.0.0"]
+CMD ["yarn", "run", "docs:dev"]
